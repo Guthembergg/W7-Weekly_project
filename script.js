@@ -92,11 +92,15 @@ const asyncWait = async function (url, where) {
           alertDiv.classList.toggle("d-none");
         }
       }
+      let d = 0;
       function modalFunction() {
         let modalDiv = document.getElementById("modalBody");
-        array1.forEach((element) => {
-          modalDiv.innerHTML += `${element.title}: ${element.album.title} </br>`;
-        });
+        if (d === 0) {
+          array1.forEach((element) => {
+            modalDiv.innerHTML += `${element.title}: ${element.album.title} </br>`;
+          });
+          d++;
+        }
       }
 
       let shuffleButton = document.getElementById("shuffleMe");
