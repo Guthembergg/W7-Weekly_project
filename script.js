@@ -2,7 +2,9 @@ var array1 = [];
 var c = 0;
 const asyncWait = async function (url, where) {
   try {
-    let res = await fetch(url);
+    let res = await fetch(
+      `https://striveschool-api.herokuapp.com/api/deezer/search?q=${url}`
+    );
     if (res.ok) {
       let data = await res.json();
       const array = Object.values(data);
@@ -108,18 +110,18 @@ const asyncWait = async function (url, where) {
 };
 
 const firstParagraph = asyncWait(
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q=alice%20in%20chains%20jar%20of%20flies",
+  "alice%20in%20chains%20jar%20of%20flies",
   "myDiv"
 );
 
 const secondParagraph = asyncWait(
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q=(III)%20crystal%20transgender",
+  "(III)%20crystal%20transgender",
 
   "favourite"
 );
 
 const thirdParagraph = asyncWait(
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q=pinkfloyd",
+  "pinkfloyd",
 
   "carousel"
 );
