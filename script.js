@@ -91,13 +91,16 @@ const asyncWait = async function (url, where) {
         }
       }
       function modalFunction() {
-        let modalDiv = document.getElementById("modalDiv");
+        let modalDiv = document.getElementById("modalBody");
+        array1.forEach((element) => {
+          modalDiv.innerHTML += `${element.title}: ${element.album.title} </br>`;
+        });
       }
 
       let shuffleButton = document.getElementById("shuffleMe");
       shuffleButton.onclick = shuffle;
-      let modalButton = document.getElementById("modal");
-      shuffleButton.onclick = modalFunction;
+      let modalButton = document.getElementById("modalButton");
+      modalButton.onclick = modalFunction;
     }
   } catch (err) {
     console.log(err);

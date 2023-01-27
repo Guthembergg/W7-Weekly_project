@@ -112,9 +112,7 @@
         <button class="col-2 btn btn-primary m-5" type="button" id="shuffleMe">
           click me to order songs by rank
         </button>
-        <button class="col-2 btn btn-primary m-5" type="button" id="modal">
-          click me to open a modal with all album titles and song titles
-        </button>
+
         <div
           class="col-6 text-center alert alert-success d-none"
           role="alert"
@@ -130,6 +128,7 @@
       class="btn btn-primary"
       data-bs-toggle="modal"
       data-bs-target="#exampleModalLong"
+      id="modalButton"
     >
       Launch demo modal
     </button>
@@ -146,22 +145,24 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              album titles and song titles
+            </h5>
             <button
               type="button"
               class="close"
-              data-dismiss="modal"
+              data-bs-dismiss="modal"
               aria-label="Close"
             >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">...</div>
+          <div class="modal-body" id="modalBody"></div>
           <div class="modal-footer">
             <button
               type="button"
               class="btn btn-secondary"
-              data-dismiss="modal"
+              data-bs-dismiss="modal"
             >
               Close
             </button>
