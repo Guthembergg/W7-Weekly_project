@@ -28,6 +28,22 @@ const asyncWait = async function (url, where) {
         `;
         });
       } else if (where === "carousel") {
+        jarray.forEach((item, index) => {
+          // Add items from the JSON file
+          const carouselItem = document.createElement("div");
+          carouselItem.classList.add("carousel-item");
+          if (index === 0) {
+            carouselItem.classList.add("active");
+          }
+          carouselItem.innerHTML = `
+              <img src="${item.album.cover_xl}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>${item.title}</h5>
+                <p>${item.album.title}</p>
+              </div>
+            `;
+          document.querySelector(".carousel-inner").appendChild(carouselItem);
+        });
       } else {
         jarray.forEach((element) => {
           div.innerHTML += `
@@ -62,7 +78,7 @@ const secondParagraph = asyncWait(
 );
 
 const thirdParagraph = asyncWait(
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q=(III)%20crystal%20transgender",
+  "https://striveschool-api.herokuapp.com/api/deezer/search?q=pinkfloyd",
 
   "carousel"
 );
