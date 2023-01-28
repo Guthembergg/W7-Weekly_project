@@ -1,5 +1,4 @@
 var array1 = [];
-var c = 0;
 const asyncWait = async function (url, where) {
   try {
     let res = await fetch(
@@ -88,34 +87,30 @@ Your browser does not support the audio element.
       function shuffle() {
         array1.sort((a, b) => a.rank - b.rank);
         let alertDiv = document.getElementById("alertDiv");
+        alertDiv.innerHTML = "";
+        array1.forEach((element, index) => {
+          let newAlert = document.createElement("div");
+          newAlert.classList.add("alert");
+          newAlert.role = "alert";
 
-        if (c === 0) {
-          alertDiv.classList.remove("d-none");
-          array1.forEach((element, index) => {
-            let newAlert = document.createElement("div");
-            newAlert.classList.add("alert");
-            newAlert.role = "alert";
+          alertDiv.appendChild(newAlert);
+          newAlert.innerHTML = `${index + 1}: ${element.artist.name} - ${
+            element.title
+          }- Rank: ${element.rank}`;
+        });
 
-            alertDiv.appendChild(newAlert);
-            newAlert.innerHTML = `${index + 1}: ${element.artist.name} - ${
-              element.title
-            }- Rank: ${element.rank}`;
-          });
-          c++;
-          // alert(JSON.stringify(array1));
-        } else {
-          alertDiv.classList.toggle("d-none");
-        }
+        // alert(JSON.stringify(array1));
+
+        alertDiv.classList.toggle("d-none");
       }
-      let d = 0;
+
       function modalFunction() {
         let modalDiv = document.getElementById("modalBody");
-        if (d === 0) {
-          array1.forEach((element) => {
-            modalDiv.innerHTML += `${element.title}: ${element.album.title} </br>`;
-          });
-          d++;
-        }
+        modalDiv.innerHTML = "";
+
+        array1.forEach((element) => {
+          modalDiv.innerHTML += `${element.title}: ${element.album.title} </br>`;
+        });
       }
 
       let shuffleButton = document.getElementById("shuffleMe");
@@ -166,3 +161,5 @@ function hide() {
 buttonSearch.addEventListener("click", search);
 let hideButton = document.getElementById("hideButton");
 hideButton.addEventListener("click", hide);
+
+// ho lasciato la possibiità di ordinare anche gli elementi della ricerca nell alert e vedere le canzoni e gli album della ricerca nel modale, potevo togliere questa cosa mettendo un if prima del push ma ho preferito lasciarlo cosi.
