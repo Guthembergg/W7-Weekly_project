@@ -65,7 +65,7 @@ Your browser does not support the audio element.
           array1.push(element);
 
           div.innerHTML += `
-          <div class="col-10 col-sm-6 col-md-6 col-lg-4 col-xl-3 my-3">
+          <div class="d-flex col-10 col-sm-6 col-md-6 col-lg-4 col-xl-3 my-3">
         <div class="card " id="${element.id}" >
         <img class="card-img-top" src="${element.album.cover_xl}" alt="Card image cap">
         <div class="card-body d-flex flex-column justify-content-end align-items-center">
