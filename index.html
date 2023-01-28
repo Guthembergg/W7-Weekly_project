@@ -14,7 +14,7 @@
   </head>
 
   <body class="bg-dark-subtle">
-    <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
       <div class="container">
         <a class="navbar-brand" href="#">My favourite Music</a>
         <button
@@ -85,21 +85,16 @@
       <button
         id="hideButton"
         type="button"
-        class="btn btn-secondary position-absolute top-0 start-100"
+        class="btn btn-secondary position-absolute top-0 start-0"
       >
         Hide
       </button>
-      <div class="row row-cols-4 d-flex justify-content-evenly" id="searchDiv">
-        " >
-      </div>
+      <div class="row flex justify-content-evenly" id="searchDiv">" ></div>
     </div>
 
     <div class="container mt-5">
       <h2 class="text-center fw-bold">My favourite Band</h2>
-      <div
-        class="row row-cols-4 d-flex justify-content-evenly"
-        id="myDiv"
-      ></div>
+      <div class="row d-flex justify-content-evenly" id="myDiv"></div>
     </div>
 
     <div class="container mt-5">
@@ -110,7 +105,7 @@
       <div class="row d-flex justify-content-center">
         <div
           id="carouselExample"
-          class="carousel slide col-8"
+          class="carousel slide w-75"
           data-bs-ride="carousel"
           data-interval="3000"
         >
@@ -143,7 +138,7 @@
     <div class="d-flex justify-content-center mt-5">
       <button
         type="button"
-        class="btn btn-dark col-2"
+        class="btn btn-dark"
         data-bs-toggle="modal"
         data-bs-target="#exampleModalLong"
         id="modalButton"
@@ -152,14 +147,13 @@
       </button>
     </div>
 
-    <div class="container-fluid d-flex flex-column justify-content-center">
-      <div class="row d-flex flex-column align-items-center">
-        <button class="col-2 btn btn-dark m-5" type="button" id="shuffleMe">
-          click to order all songs by rank
-        </button>
-
+    <div class="container d-flex flex-column align-items-center">
+      <button class="btn btn-dark m-5" type="button" id="shuffleMe">
+        click to order all songs by rank
+      </button>
+      <div class="row flex-column align-items-center">
         <div
-          class="col-6 text-center alert alert-success d-none w-50"
+          class="text-center alert alert-success d-none"
           role="alert"
           id="alertDiv"
         ></div>
@@ -180,8 +174,8 @@
     >
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">
+          <div class="modal-header justify-content-evenly">
+            <h5 class="modal-title text-center" id="exampleModalLongTitle">
               album titles and song titles
             </h5>
             <button
