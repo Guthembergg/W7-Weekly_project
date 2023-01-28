@@ -68,10 +68,10 @@ Your browser does not support the audio element.
         <div class="card col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3 m-2 " id="${element.id}" >
         <img class="card-img-top" src="${element.album.cover_xl}" alt="Card image cap">
         <div class="card-body d-flex flex-column justify-content-end align-items-center">
-          <h5 class="card-title">${element.title}</h5>
-          <p class="card-text">${element.album.title}</p>
-          <p class="card-text">${element.artist.name}</p>
-          <p class="card-text">${element.duration} seconds</p>
+          <h5 class="card-title fw-bolder">${element.title}</h5>
+          <p class="card-text ">${element.album.title}</p>
+          <p class="card-text fw-bold">${element.artist.name}</p>
+          <p class="card-text fst-italic">${element.duration} seconds</p>
           <audio controls>
   <source src="${element.preview}" type="audio/mpeg">
 Your browser does not support the audio element.
@@ -138,7 +138,7 @@ const secondParagraph = asyncWait(
 );
 
 const thirdParagraph = asyncWait(
-  "pinkfloyd",
+  "morcheeba",
 
   "carousel"
 );
