@@ -23,7 +23,7 @@ const asyncWait = async function (url, where) {
             <h5 class="card-title">${element.title}</h5>
             <p class="card-text">${element.album.title}</p>
             <p class="card-text">${element.artist.name}</p>
-            <p class="card-text"><small class="text-muted">${element.duration} seconds</small></p>
+            <p class="card-text"><small class="text-muted fst-italic">${element.duration} seconds</small></p>
             <audio controls>
             <source src="${element.preview}" type="audio/mpeg">
 Your browser does not support the audio element.

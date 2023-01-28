@@ -81,7 +81,7 @@
     </nav>
 
     <div class="container mt-5 d-none position-relative" id="searchContainer">
-      <h2 class="text-center">Your search</h2>
+      <h2 class="text-center fw-bold">Your search</h2>
       <button
         id="hideButton"
         type="button"
@@ -103,7 +103,7 @@
     </div>
 
     <div class="container mt-5">
-      <h2 class="text-center">My favourite Song</h2>
+      <h2 class="text-center fw-bold">My favourite Song</h2>
       <div class="row d-flex justify-content-center" id="favourite"></div>
     </div>
     <div class="container-fluid mt-5">
@@ -111,10 +111,10 @@
         <div
           id="carouselExample"
           class="carousel slide col-8"
-          data-ride="carousel"
+          data-bs-ride="carousel"
           data-interval="3000"
         >
-          <h2 class="text-center">My favourite albums</h2>
+          <h2 class="text-center fw-bold">My favourite albums</h2>
           <div class="carousel-inner">
             <!-- Items from the JSON file will be added here dynamically -->
           </div>
@@ -143,19 +143,19 @@
     <div class="d-flex justify-content-center mt-5">
       <button
         type="button"
-        class="btn btn-primary"
+        class="btn btn-dark col-2"
         data-bs-toggle="modal"
         data-bs-target="#exampleModalLong"
         id="modalButton"
       >
-        click to view songs and their albums
+        click to view all songs on the site
       </button>
     </div>
 
     <div class="container-fluid d-flex flex-column justify-content-center">
       <div class="row d-flex flex-column align-items-center">
-        <button class="col-2 btn btn-primary m-5" type="button" id="shuffleMe">
-          click to order songs by rank
+        <button class="col-2 btn btn-dark m-5" type="button" id="shuffleMe">
+          click to order all songs by rank
         </button>
 
         <div
