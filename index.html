@@ -14,9 +14,9 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">My favourite Music</a>
         <button
           class="navbar-toggler d-lg-none"
           type="button"
@@ -31,12 +31,15 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
           <ul class="navbar-nav me-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" href="#" aria-current="page"
-                >Home <span class="visually-hidden">(current)</span></a
+              <a class="nav-link active" href="#myDiv" aria-current="page"
+                >Band <span class="visually-hidden">(current)</span></a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#favourite">Song</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#carouselExample">Albums</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -46,11 +49,15 @@
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-                >Dropdown</a
+                >Buttons</a
               >
               <div class="dropdown-menu" aria-labelledby="dropdownId">
-                <a class="dropdown-item" href="#">Action 1</a>
-                <a class="dropdown-item" href="#">Action 2</a>
+                <a class="dropdown-item" href="#modalButton"
+                  >View songs and their albums</a
+                >
+                <a class="dropdown-item" href="#shuffleMe"
+                  >Order songs by rank</a
+                >
               </div>
             </li>
           </ul>
@@ -59,14 +66,33 @@
               class="form-control me-sm-2"
               type="text"
               placeholder="Search"
+              id="searchInput"
             />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            <button
+              class="btn btn-outline-success my-2 my-sm-0"
+              type="submit"
+              id="mySearch"
+            >
               Search
             </button>
           </form>
         </div>
       </div>
     </nav>
+
+    <div class="container mt-5 d-none position-relative" id="searchContainer">
+      <h2 class="text-center">Your search:</h2>
+      <button
+        id="hideButton"
+        type="button"
+        class="btn btn-secondary position-absolute top-0 start-100"
+      >
+        Hide
+      </button>
+      <div class="row row-cols-4 d-flex justify-content-evenly" id="searchDiv">
+        " >
+      </div>
+    </div>
 
     <div class="container mt-5">
       <h2 class="text-center">My favourite Band</h2>
@@ -77,9 +103,8 @@
     </div>
 
     <div class="container mt-5">
-      <div class="row d-flex justify-content-center" id="favourite">
-        <h2 class="text-center">My favourite Song</h2>
-      </div>
+      <h2 class="text-center">My favourite Song</h2>
+      <div class="row d-flex justify-content-center" id="favourite"></div>
     </div>
     <div class="container-fluid mt-5">
       <div class="row d-flex justify-content-center">
@@ -123,14 +148,14 @@
         data-bs-target="#exampleModalLong"
         id="modalButton"
       >
-        click me to see all songs and their albums
+        click to view songs and their albums
       </button>
     </div>
 
     <div class="container-fluid d-flex flex-column justify-content-center">
       <div class="row d-flex flex-column align-items-center">
         <button class="col-2 btn btn-primary m-5" type="button" id="shuffleMe">
-          click me to order songs by rank
+          click to order songs by rank
         </button>
 
         <div
