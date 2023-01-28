@@ -147,13 +147,14 @@ console.log(array1);
 let inputField = document.getElementById("searchInput");
 let buttonSearch = document.getElementById("mySearch");
 
-function search() {
+function search(event) {
   if (inputField.value) {
     let searchDiv = document.getElementById("searchDiv");
     searchDiv.innerHTML = "";
     const fourthParagraph = asyncWait(inputField.value, "searchDiv");
     let searchContainer = document.getElementById("searchContainer");
     searchContainer.classList.remove("d-none");
+    event.preventDefault();
   }
 }
 function hide() {
