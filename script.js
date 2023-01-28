@@ -17,13 +17,17 @@ const asyncWait = async function (url, where) {
           div.innerHTML += `
 
 
-          <div class="card mb-3">
+          <div class="card my-5 col-8">
           <img class="card-img-top" src="${element.album.cover_xl}" alt="Card image cap">
           <div class="card-body text-center">
             <h5 class="card-title">${element.title}</h5>
             <p class="card-text">${element.album.title}</p>
             <p class="card-text">${element.artist.name}</p>
             <p class="card-text"><small class="text-muted">${element.duration} seconds</small></p>
+            <audio controls>
+            <source src="${element.preview}" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
           </div>
         </div>
         
@@ -47,6 +51,11 @@ const asyncWait = async function (url, where) {
               <div class="carousel-caption d-none d-md-block">
                 <h5>${item.title}</h5>
                 <p>${item.album.title}</p>
+                <audio controls>
+                <source src="${item.preview}" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+                
               </div>
             `;
           document.querySelector(".carousel-inner").appendChild(carouselItem);
@@ -56,13 +65,17 @@ const asyncWait = async function (url, where) {
           array1.push(element);
 
           div.innerHTML += `
-        <div class="card col-12 col-sm-5 col-lg-3 m-2 " id="${element.id}" >
+        <div class="card col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3 m-2 " id="${element.id}" >
         <img class="card-img-top" src="${element.album.cover_xl}" alt="Card image cap">
         <div class="card-body d-flex flex-column justify-content-end align-items-center">
           <h5 class="card-title">${element.title}</h5>
           <p class="card-text">${element.album.title}</p>
           <p class="card-text">${element.artist.name}</p>
           <p class="card-text">${element.duration} seconds</p>
+          <audio controls>
+  <source src="${element.preview}" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
        
         </div>
       </div>

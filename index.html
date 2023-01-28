@@ -68,14 +68,20 @@
       </div>
     </nav>
 
-    <div class="container">
-      <div class="row d-flex justify-content-evenly" id="myDiv"></div>
+    <div class="container mt-5">
+      <h2 class="text-center">My favourite Band</h2>
+      <div
+        class="row row-cols-4 d-flex justify-content-evenly"
+        id="myDiv"
+      ></div>
     </div>
 
-    <div class="container">
-      <div class="row" id="favourite"></div>
+    <div class="container mt-5">
+      <div class="row d-flex justify-content-center" id="favourite">
+        <h2 class="text-center">My favourite Song</h2>
+      </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid mt-5">
       <div class="row d-flex justify-content-center">
         <div
           id="carouselExample"
@@ -83,6 +89,7 @@
           data-ride="carousel"
           data-interval="3000"
         >
+          <h2 class="text-center">My favourite albums</h2>
           <div class="carousel-inner">
             <!-- Items from the JSON file will be added here dynamically -->
           </div>
@@ -107,6 +114,19 @@
         </div>
       </div>
     </div>
+
+    <div class="d-flex justify-content-center mt-5">
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModalLong"
+        id="modalButton"
+      >
+        click me to see all songs and their albums
+      </button>
+    </div>
+
     <div class="container-fluid d-flex flex-column justify-content-center">
       <div class="row d-flex flex-column align-items-center">
         <button class="col-2 btn btn-primary m-5" type="button" id="shuffleMe">
@@ -114,7 +134,7 @@
         </button>
 
         <div
-          class="col-6 text-center alert alert-success d-none"
+          class="col-6 text-center alert alert-success d-none position-absolute start-0 top-75 w-25"
           role="alert"
           id="alertDiv"
         ></div>
@@ -123,15 +143,6 @@
     <div id="modalDiv"></div>
 
     <!-- Button trigger modal -->
-    <button
-      type="button"
-      class="btn btn-primary"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModalLong"
-      id="modalButton"
-    >
-      Launch demo modal
-    </button>
 
     <!-- Modal -->
     <div
@@ -166,7 +177,6 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
